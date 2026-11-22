@@ -14,3 +14,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 8. [#include](docs/step08-include.md) — `<cstdio>` turns 2 lines into 1251, `-H` include tree
 9. [#define, #ifdef, -D](docs/step09-define.md) — the preprocessor replaces and removes text
 10. [Your own header and -I](docs/step10-include-path.md) — `"..."` vs `<...>`, include search path
+11. [Separate compilation](docs/step11-separate-compilation.md) — `add.cpp`, declaration vs definition, link 2 objects

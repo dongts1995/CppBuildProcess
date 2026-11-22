@@ -42,6 +42,8 @@ _Z6printfPKcz:
 	.section .rdata,"dr"
 .LC0:
 	.ascii "Hello\12\0"
+.LC1:
+	.ascii "2 + 3 = %d\12\0"
 	.text
 	.globl	main
 	.def	main;	.scl	2;	.type	32;	.endef
@@ -59,6 +61,13 @@ main:
 	leaq	.LC0(%rip), %rax
 	movq	%rax, %rcx
 	call	_Z6printfPKcz
+	movl	$3, %edx
+	movl	$2, %ecx
+	call	_Z3addii
+	movl	%eax, %edx
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rcx
+	call	_Z6printfPKcz
 	movl	$0, %eax
 	addq	$32, %rsp
 	popq	%rbp
@@ -66,3 +75,4 @@ main:
 	.seh_endproc
 	.ident	"GCC: (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) 12.1.0"
 	.def	__mingw_vfprintf;	.scl	2;	.type	32;	.endef
+	.def	_Z3addii;	.scl	2;	.type	32;	.endef

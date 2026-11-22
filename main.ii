@@ -1250,4 +1250,5 @@ namespace std
 # 3 "main.cpp" 2
 
 # 3 "main.cpp"
-int main() { std::printf("Hello\n"); return 0; }
+int add(int a, int b);
+int main() { std::printf("Hello\n"); std::printf("2 + 3 = %d\n", add(2, 3)); return 0; }

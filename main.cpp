@@ -1,3 +1,4 @@
 #include <cstdio>
 #include "message.h"
-int main() { std::printf(MESSAGE); return 0; }
+int add(int a, int b);
+int main() { std::printf(MESSAGE); std::printf("2 + 3 = %d\n", add(2, 3)); return 0; }
