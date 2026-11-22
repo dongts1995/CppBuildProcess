@@ -47,6 +47,7 @@ main.ii    (~98 bytes)
 main.o     (~768 bytes)
 main.s     (~447 bytes)
 ```
+![ls after -save-temps](step03-save-temps-ls.png)
 
 ### 2. Look at the preprocessed file
 ```powershell
@@ -88,9 +89,13 @@ g++ -save-temps main.cpp -o main.exe
 ls main.*
 ```
 Expect: the error `main.cpp:1:22: error: expected ';' before '}' token`, and then:
-- `main.ii` **exists** (~95 bytes) → preprocessing succeeded,
-- `main.s` exists but is almost empty (~18 bytes, just `.file "main.cpp"`) → compiling failed,
+- `main.ii` **exists** (~97 bytes) → preprocessing succeeded,
+- `main.s` exists but is almost empty (~19 bytes, just `.file "main.cpp"`) → compiling failed,
 - **no new `main.o`** → the assembler never ran.
+
+![failed build with -save-temps](step03-save-temps-failed-build.png)
+
+Careful: `main.exe` is still there — it is the **old** exe from the previous successful build, not a new one.
 
 The files tell you exactly which stage failed. Put the `;` back and rebuild.
 
