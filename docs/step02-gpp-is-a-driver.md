@@ -16,6 +16,7 @@ main.cpp ──[cc1plus.exe]──▶ xxx.s ──[as.exe]──▶ xxx.o ──
            preprocess +    (assembly) assemble   (object)       link
            compile
 ```
+<img width="1934" height="530" alt="image" src="https://github.com/user-attachments/assets/0bcdab02-ca18-4a70-a4ef-6f7bdd727b0c" />
 
 | Tool | Job | Input → Output |
 |---|---|---|
