@@ -16,3 +16,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 10. [Your own header and -I](docs/step10-include-path.md) — `"..."` vs `<...>`, include search path
 11. [Separate compilation](docs/step11-separate-compilation.md) — `add.cpp`, declaration vs definition, link 2 objects
 12. [Declaration in a header](docs/step12-header-declaration.md) — `add.h`, why `add.cpp` includes its own header
+13. [ODR, inline, #pragma once](docs/step13-odr-inline-pragma-once.md) — definitions in headers, `multiple definition` vs `redefinition`

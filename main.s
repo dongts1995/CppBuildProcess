@@ -38,17 +38,12 @@ _Z6printfPKcz:
 	popq	%rbp
 	ret
 	.seh_endproc
-	.def	__main;	.scl	2;	.type	32;	.endef
-	.section .rdata,"dr"
-.LC0:
-	.ascii "Hello\12\0"
-.LC1:
-	.ascii "2 + 3 = %d\12\0"
-	.text
-	.globl	main
-	.def	main;	.scl	2;	.type	32;	.endef
-	.seh_proc	main
-main:
+	.section	.text$_Z5twicei,"x"
+	.linkonce discard
+	.globl	_Z5twicei
+	.def	_Z5twicei;	.scl	2;	.type	32;	.endef
+	.seh_proc	_Z5twicei
+_Z5twicei:
 .LFB46:
 	pushq	%rbp
 	.seh_pushreg	%rbp
@@ -57,19 +52,54 @@ main:
 	subq	$32, %rsp
 	.seh_stackalloc	32
 	.seh_endprologue
+	movl	%ecx, 16(%rbp)
+	movl	16(%rbp), %edx
+	movl	16(%rbp), %eax
+	movl	%eax, %ecx
+	call	_Z3addii
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	__main;	.scl	2;	.type	32;	.endef
+	.section .rdata,"dr"
+.LC0:
+	.ascii "Hello\12\0"
+.LC1:
+	.ascii "2 + 3 = %d, twice(4) = %d\12\0"
+	.text
+	.globl	main
+	.def	main;	.scl	2;	.type	32;	.endef
+	.seh_proc	main
+main:
+.LFB47:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	pushq	%rbx
+	.seh_pushreg	%rbx
+	subq	$40, %rsp
+	.seh_stackalloc	40
+	leaq	32(%rsp), %rbp
+	.seh_setframe	%rbp, 32
+	.seh_endprologue
 	call	__main
 	leaq	.LC0(%rip), %rax
 	movq	%rax, %rcx
 	call	_Z6printfPKcz
+	movl	$4, %ecx
+	call	_Z5twicei
+	movl	%eax, %ebx
 	movl	$3, %edx
 	movl	$2, %ecx
 	call	_Z3addii
+	movl	%ebx, %r8d
 	movl	%eax, %edx
 	leaq	.LC1(%rip), %rax
 	movq	%rax, %rcx
 	call	_Z6printfPKcz
 	movl	$0, %eax
-	addq	$32, %rsp
+	addq	$40, %rsp
+	popq	%rbx
 	popq	%rbp
 	ret
 	.seh_endproc
