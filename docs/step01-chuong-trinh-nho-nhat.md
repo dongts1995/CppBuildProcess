@@ -33,6 +33,8 @@ Sau đó `ls` sẽ thấy file `main.exe` mới xuất hiện.
 echo $LASTEXITCODE
 ```
 Expect: chương trình không in gì; dòng `echo` in ra `0`.
+<img width="966" height="182" alt="image" src="https://github.com/user-attachments/assets/ea5313af-908d-4f6d-900e-69fc465cf7dc" />
+
 
 ### Thử nghiệm thêm
 Sửa `return 0;` thành `return 7;`, build lại, chạy lại → `$LASTEXITCODE` in `7`.
