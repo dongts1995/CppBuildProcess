@@ -39,6 +39,8 @@ Expect: about 47 lines. The important ones (starting with a single space — the
  c:/mingw64/.../collect2.exe ... -o main.exe ... crt2.o crtbegin.o ... C:\Users\...\Temp\cclAHDmL.o -lstdc++ -lmingw32 ... crtend.o
 ```
 (The `ccXXXX` names are random and change on every run.)
+<img width="2184" height="804" alt="image" src="https://github.com/user-attachments/assets/5377d457-175c-4f64-a1a0-61932a5ea2fd" />
+
 
 Also notice:
 - The line `GNU C++17 ...` → by default g++ 12 compiles as **C++17**.
@@ -56,6 +58,10 @@ Expect: exactly 3 (very long) lines, in the order `cc1plus.exe` → `as.exe` →
 > Why `2>&1`? All `-v` output goes to **stderr**, not stdout.
 > Without `2>&1`, `Select-String` receives nothing.
 
+<img width="2442" height="800" alt="image" src="https://github.com/user-attachments/assets/6f25d098-a867-4824-bf0e-a507c26b72d3" />
+
+
+
 ### 3. Print the commands without running them: `-###`
 ```powershell
 del main.exe
@@ -64,6 +70,8 @@ ls main.exe
 ```
 Expect: the 3 commands are printed (arguments wrapped in double quotes), but `ls main.exe` reports **file not found**
 → `-###` is only a dry run, nothing is built. Run `g++ main.cpp -o main.exe` again to get the exe back.
+<img width="1338" height="474" alt="image" src="https://github.com/user-attachments/assets/74666348-d25b-445f-8054-c6848057cbde" />
+
 
 ## Errors you may hit at this step
 
