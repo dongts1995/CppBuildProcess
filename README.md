@@ -20,3 +20,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 14. [Name mangling and extern "C"](docs/step14-name-mangling-extern-c.md) — `_Z3addii`, `c++filt`, linking a C file
 15. [Static library](docs/step15-static-library.md) — `ar rcs libmath.a`, `-L. -lmath`, only needed members are linked
 16. [Link order](docs/step16-link-order.md) — `ld` reads left to right, `-Wl,-Map`, `--start-group`
+17. [Dynamic library (DLL)](docs/step17-dynamic-library-dll.md) — `-shared`, import/export tables, "DLL not found" at load time
