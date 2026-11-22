@@ -17,3 +17,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 11. [Separate compilation](docs/step11-separate-compilation.md) — `add.cpp`, declaration vs definition, link 2 objects
 12. [Declaration in a header](docs/step12-header-declaration.md) — `add.h`, why `add.cpp` includes its own header
 13. [ODR, inline, #pragma once](docs/step13-odr-inline-pragma-once.md) — definitions in headers, `multiple definition` vs `redefinition`
+14. [Name mangling and extern "C"](docs/step14-name-mangling-extern-c.md) — `_Z3addii`, `c++filt`, linking a C file

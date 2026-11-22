@@ -65,8 +65,9 @@ _Z5twicei:
 	.section .rdata,"dr"
 .LC0:
 	.ascii "Hello\12\0"
+	.align 8
 .LC1:
-	.ascii "2 + 3 = %d, twice(4) = %d\12\0"
+	.ascii "2 + 3 = %d, twice(4) = %d, 5 - 3 = %d\12\0"
 	.text
 	.globl	main
 	.def	main;	.scl	2;	.type	32;	.endef
@@ -75,10 +76,12 @@ main:
 .LFB47:
 	pushq	%rbp
 	.seh_pushreg	%rbp
+	pushq	%rsi
+	.seh_pushreg	%rsi
 	pushq	%rbx
 	.seh_pushreg	%rbx
-	subq	$40, %rsp
-	.seh_stackalloc	40
+	subq	$32, %rsp
+	.seh_stackalloc	32
 	leaq	32(%rsp), %rbp
 	.seh_setframe	%rbp, 32
 	.seh_endprologue
@@ -86,23 +89,30 @@ main:
 	leaq	.LC0(%rip), %rax
 	movq	%rax, %rcx
 	call	_Z6printfPKcz
+	movl	$3, %edx
+	movl	$5, %ecx
+	call	sub
+	movl	%eax, %esi
 	movl	$4, %ecx
 	call	_Z5twicei
 	movl	%eax, %ebx
 	movl	$3, %edx
 	movl	$2, %ecx
 	call	_Z3addii
+	movl	%esi, %r9d
 	movl	%ebx, %r8d
 	movl	%eax, %edx
 	leaq	.LC1(%rip), %rax
 	movq	%rax, %rcx
 	call	_Z6printfPKcz
 	movl	$0, %eax
-	addq	$40, %rsp
+	addq	$32, %rsp
 	popq	%rbx
+	popq	%rsi
 	popq	%rbp
 	ret
 	.seh_endproc
 	.ident	"GCC: (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) 12.1.0"
 	.def	__mingw_vfprintf;	.scl	2;	.type	32;	.endef
 	.def	_Z3addii;	.scl	2;	.type	32;	.endef
+	.def	sub;	.scl	2;	.type	32;	.endef
