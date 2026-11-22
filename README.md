@@ -22,3 +22,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 16. [Link order](docs/step16-link-order.md) — `ld` reads left to right, `-Wl,-Map`, `--start-group`
 17. [Dynamic library (DLL)](docs/step17-dynamic-library-dll.md) — `-shared`, import/export tables, "DLL not found" at load time
 18. [Build script](docs/step18-build-script.md) — `build.ps1`, incremental build by timestamps, the header-dependency bug, `-MMD`
+19. [Makefile](docs/step19-makefile.md) — rules, `$@ $< $^`, `.d` files fix header dependencies, `mingw32-make`
