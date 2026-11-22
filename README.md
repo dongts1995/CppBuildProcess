@@ -13,3 +13,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 7. [A complete ld command](docs/step07-ld-full-command.md) — `crt2.o`, `crtbegin.o`, libraries: `main.exe` without g++
 8. [#include](docs/step08-include.md) — `<cstdio>` turns 2 lines into 1251, `-H` include tree
 9. [#define, #ifdef, -D](docs/step09-define.md) — the preprocessor replaces and removes text
+10. [Your own header and -I](docs/step10-include-path.md) — `"..."` vs `<...>`, include search path

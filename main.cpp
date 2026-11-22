@@ -1,7 +1,3 @@
 #include <cstdio>
-#ifdef VERBOSE
-#define MESSAGE "Hello (verbose build)\n"
-#else
-#define MESSAGE "Hello\n"
-#endif
+#include "message.h"
 int main() { std::printf(MESSAGE); return 0; }
