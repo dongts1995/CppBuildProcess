@@ -23,3 +23,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 17. [Dynamic library (DLL)](docs/step17-dynamic-library-dll.md) — `-shared`, import/export tables, "DLL not found" at load time
 18. [Build script](docs/step18-build-script.md) — `build.ps1`, incremental build by timestamps, the header-dependency bug, `-MMD`
 19. [Makefile](docs/step19-makefile.md) — rules, `$@ $< $^`, `.d` files fix header dependencies, `mingw32-make`
+20. [CMake](docs/step20-cmake.md) — targets, `PUBLIC` include dirs, generate + build, `--verbose`, the whole journey
