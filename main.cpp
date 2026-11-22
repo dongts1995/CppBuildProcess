@@ -1,1 +1,2 @@
-int main() { return 0; }
+#include <cstdio>
+int main() { std::printf("Hello\n"); return 0; }

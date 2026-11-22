@@ -11,3 +11,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 5. [Call the assembler yourself](docs/step05-as-by-hand.md) — `as main.s -o main.o`, no g++
 6. [Call the linker yourself](docs/step06-ld-undefined-reference.md) — `ld`, symbols, relocations, `undefined reference`
 7. [A complete ld command](docs/step07-ld-full-command.md) — `crt2.o`, `crtbegin.o`, libraries: `main.exe` without g++
+8. [#include](docs/step08-include.md) — `<cstdio>` turns 2 lines into 1251, `-H` include tree
