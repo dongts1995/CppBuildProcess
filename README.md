@@ -8,3 +8,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 2. [g++ is a driver](docs/step02-gpp-is-a-driver.md) — `g++ -v` reveals the tools `cc1plus`, `as`, `collect2`
 3. [Keep intermediate files](docs/step03-save-temps.md) — `-save-temps` keeps `.ii`, `.s`, `.o`
 4. [Run each stage by hand](docs/step04-stages-by-hand.md) — `-E`, `-S`, `-c`, then link
+5. [Call the assembler yourself](docs/step05-as-by-hand.md) — `as main.s -o main.o`, no g++
