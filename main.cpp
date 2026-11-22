@@ -1,2 +1,7 @@
 #include <cstdio>
-int main() { std::printf("Hello\n"); return 0; }
+#ifdef VERBOSE
+#define MESSAGE "Hello (verbose build)\n"
+#else
+#define MESSAGE "Hello\n"
+#endif
+int main() { std::printf(MESSAGE); return 0; }

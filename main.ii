@@ -1247,5 +1247,10 @@ namespace std
 }
 # 2 "main.cpp" 2
 
-# 2 "main.cpp"
+
+
+
+
+
+# 7 "main.cpp"
 int main() { std::printf("Hello\n"); return 0; }
