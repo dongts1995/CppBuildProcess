@@ -10,3 +10,4 @@ Toolchain: MinGW-w64 g++ on Windows (PowerShell).
 4. [Run each stage by hand](docs/step04-stages-by-hand.md) — `-E`, `-S`, `-c`, then link
 5. [Call the assembler yourself](docs/step05-as-by-hand.md) — `as main.s -o main.o`, no g++
 6. [Call the linker yourself](docs/step06-ld-undefined-reference.md) — `ld`, symbols, relocations, `undefined reference`
+7. [A complete ld command](docs/step07-ld-full-command.md) — `crt2.o`, `crtbegin.o`, libraries: `main.exe` without g++
